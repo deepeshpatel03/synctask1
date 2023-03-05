@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-signin-client_id" content="863086184890-mesc6o183ug3kaq7j3d67p6mbei29elp.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login atthutication</title>
+<!-- <link rel="stylesheet" href="login.css"> -->
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        text-transform: capitalize;
+        margin: auto;
+        background-color: aqua;
+        padding: 15px 20px 20px;
+        border: 1px solid rgb(55, 0, 255);
+        border-radius: 15px;
+        width: fit-content;
+        height: fit-content;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    .email{
+    align-items: center;
+        width: 89%;
+        padding: 10px;
+        margin-top: 3px;
+        margin-left: 5px;
+        border: 2px solid red;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .password{
+        align-items: center;
+            width: 89%;
+            padding: 10px;
+            margin-top: 3px;
+            margin-left: 5px;
+            border: 2px solid red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    .image{
+        width: fit-content;
+    }
+    
+    #text{
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        text-transform: capitalize;
+        margin-top: 10px;
+    }
+    
+    input[type="button"]{
+        margin: 10px;
+        width: 92%;
+        padding: 10px 15px 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    }
+    input[type="button"]:hover{
+        overflow: visible;
+        transition: 3s;
+    background-color: #0ca1f1;}
+    .g-signin2{
+      
+        margin: 10px;
+        width: 92%;
+        padding: 10px 15px 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    </style>
+<script >
+    //google sign in javascript
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
+    //   manual sign in javascript
+      const login={
+        user: 'deepeshpatel@gmail.com',
+        password:'12345678'
+      }
+
+
+function sign(){
+    let email=document.getElementById("email").value;
+    let password=document.getElementById("password").value;
+    if(email==login.user){
+        alert("your welcome as sync intern");
+    }else{
+    
+    document.querySelector("#email1").style.backgroundColor='red';
+    document.querySelector("#password1").style.backgroundColor='red';
+}
+}
+
+function validate() {  
+var msg;  
+if(document.getElementById('password').value.length>5){  
+msg="strong password";  
+}  
+else{  
+msg="weak password";  
+}  
+document.getElementById('mylocation').innerText=msg;  
+ }
+
+
+ 
+</script>
+</head>
+<body   >
+  
+    <div class="container">
+    <img src="https://tse4.mm.bing.net/th?id=OIP.sAY0e99syXkkMhTyy-ZBfQHaBQ&pid=Api&P=0" alt="" srcset="" class="image">
+    <div class="inputbox" id="email1">
+    <span class="span">email address
+       </span>
+    <input type="email" class="email" id="email" required>
+    
+    </div>
+    <div class="inputbox" id="password1">
+       
+        <span class="span">password
+        </span>
+     <input type="password" name="userPass" class="email" id="password" onkeyup="validate()" required>
+   <span id="mylocation" color="red"></span>
+     </div >
+     <div  >
+        <!-- <input type="button" value="Login" onclick="login()" required> -->
+        <input type="button" value="Login" onclick="sign()" required>
+     </div>
+     <div id="text">or</div>
+
+  <center>  <div class="g-signin2" data-onsuccess="onSignIn" ></div></center> 
+    </div>  
+   
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+</body>
+</html>
